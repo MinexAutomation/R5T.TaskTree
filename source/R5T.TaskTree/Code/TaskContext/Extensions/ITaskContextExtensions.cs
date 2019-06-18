@@ -25,12 +25,28 @@ namespace R5T.TaskTree
             return taskContext;
         }
 
+        public static TTaskContext AddTask<TTaskContext, TContext>(this TTaskContext taskContext, IConsumer<TContext> task, string name, string description)
+            where TTaskContext : ITaskContext<TContext>
+        {
+            var taskTreeNode = new TaskTreeLeaf<TContext>(name, description, task);
+
+            taskContext.AddTask(taskTreeNode);
+
+            return taskContext;
+        }
+
+        public static TTaskContext AddTask<TTaskContext, TContext>(this TTaskContext taskContext, IConsumer<TContext> task, string name)
+            where TTaskContext : ITaskContext<TContext>
+        {
+            taskContext.AddTask(task, name, TaskTreeNode.DefaultDescription);
+
+            return taskContext;
+        }
+
         public static TTaskContext AddTask<TTaskContext, TContext>(this TTaskContext taskContext, IConsumer<TContext> task)
             where TTaskContext : ITaskContext<TContext>
         {
-            var taskTreeNode = new TaskTreeLeaf<TContext>(task);
-
-            taskContext.AddTask(taskTreeNode);
+            taskContext.AddTask(task, TaskTreeNode.DefaultName, TaskTreeNode.DefaultDescription);
 
             return taskContext;
         }

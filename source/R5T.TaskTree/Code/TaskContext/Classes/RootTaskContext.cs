@@ -5,7 +5,8 @@ namespace R5T.TaskTree
 {
     public class RootTaskContext<TContext> : ITaskContext<TContext>
     {
-        public ITaskTreeBranchNode<TContext> Branch { get; } = new TaskTreeBranch<TContext>();
+        protected TaskTreeBranch<TContext> TaskTreeBranch = new TaskTreeBranch<TContext>();
+        public ITaskTreeBranchNode<TContext> Branch => this.TaskTreeBranch; 
         public ITaskTreeNode<TContext> Root => this.Branch;
         public ITaskContext<TContext> Parent => TaskContext<TContext>.RootTaskContextParent;
     }

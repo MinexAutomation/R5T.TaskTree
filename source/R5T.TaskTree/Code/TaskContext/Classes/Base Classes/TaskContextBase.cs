@@ -10,18 +10,49 @@ namespace R5T.TaskTree
         where TParentTaskContext : ITaskContext<TContext>
     {
         public ITaskTreeNode<TContext> Root { get; }
-        public ITaskTreeBranchNode<TContext> Branch { get; } = new TaskTreeBranch<TContext>();
+        protected TaskTreeBranch<TContext> TaskTreeBranch = new TaskTreeBranch<TContext>();
+        public ITaskTreeBranchNode<TContext> Branch => this.TaskTreeBranch;
 
         public TParentTaskContext Parent { get; }
         ITaskContext<TContext> ITaskContext<TContext>.Parent => this.Parent;
 
+        public string Name
+        {
+            get
+            {
+                var name = this.TaskTreeBranch.Name;
+                return name;
+            }
+            set
+            {
+                this.TaskTreeBranch.Name = value;
+            }
+        }
+        public string Description
+        {
+            get
+            {
+                var description = this.TaskTreeBranch.Description;
+                return description;
+            }
+            set
+            {
+                this.TaskTreeBranch.Description = value;
+            }
+        }
+
+
+        protected TaskContextBase(TParentTaskContext parentContext, ITaskTreeBranchNode<TContext> parentTaskTreeBranch)
+        {
+            this.Root = parentContext.Root;
+            this.Parent = parentContext;
+
+            parentTaskTreeBranch.AddChild(this.Branch);
+        }
 
         protected TaskContextBase(TParentTaskContext parent)
+            : this(parent, parent.Branch)
         {
-            this.Root = parent.Root;
-            this.Parent = parent;
-
-            parent.Branch.AddChild(this.Branch);
         }
     }
 }
