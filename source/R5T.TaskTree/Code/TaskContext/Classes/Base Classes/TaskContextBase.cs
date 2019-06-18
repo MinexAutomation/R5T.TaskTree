@@ -42,17 +42,10 @@ namespace R5T.TaskTree
         }
 
 
-        protected TaskContextBase(TParentTaskContext parentContext, ITaskTreeBranchNode<TContext> parentTaskTreeBranch)
+        protected TaskContextBase(TParentTaskContext parentContext)
         {
             this.Root = parentContext.Root;
             this.Parent = parentContext;
-
-            parentTaskTreeBranch.AddChild(this.Branch);
-        }
-
-        protected TaskContextBase(TParentTaskContext parent)
-            : this(parent, parent.Branch)
-        {
         }
     }
 }
