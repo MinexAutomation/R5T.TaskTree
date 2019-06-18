@@ -84,6 +84,15 @@ namespace R5T.TaskTree
             return taskContextParent;
         }
 
+        public static TTaskContextChild NewContext<TTaskContextParent, TTaskContextChild, TContext>(this TTaskContextParent taskContextParent, TTaskContextChild taskContextChild)
+            where TTaskContextParent : ITaskContext<TContext>
+            where TTaskContextChild : ITaskContext<TContext>
+        {
+            taskContextParent.Branch.AddChild(taskContextChild.Branch);
+
+            return taskContextChild;
+        }
+
         public static TTaskContextParent AddContext<TTaskContextParent, TTaskContextChild, TContext>(this TTaskContextParent taskContextParent, TTaskContextChild taskContextChild, out TTaskContextChild child)
             where TTaskContextParent : ITaskContext<TContext>
             where TTaskContextChild : ITaskContext<TContext>
