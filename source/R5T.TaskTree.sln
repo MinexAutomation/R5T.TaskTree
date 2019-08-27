@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Dependencies", "_Dependenc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.NetStandard.Types", "..\..\R5T.NetStandard.Types\source\R5T.NetStandard.Types\R5T.NetStandard.Types.csproj", "{BD7199E6-8E96-4534-B303-E3B20CA2DA63}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "R5T.NetStandard.Extensions", "..\..\R5T.NetStandard.Extensions\source\R5T.NetStandard.Extensions\R5T.NetStandard.Extensions.csproj", "{41892045-1C87-4E44-B384-79CA8557DEAD}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,25 +71,12 @@ Global
 		{BD7199E6-8E96-4534-B303-E3B20CA2DA63}.Release|x64.Build.0 = Release|Any CPU
 		{BD7199E6-8E96-4534-B303-E3B20CA2DA63}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD7199E6-8E96-4534-B303-E3B20CA2DA63}.Release|x86.Build.0 = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|x64.Build.0 = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Debug|x86.Build.0 = Debug|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|x64.ActiveCfg = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|x64.Build.0 = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|x86.ActiveCfg = Release|Any CPU
-		{41892045-1C87-4E44-B384-79CA8557DEAD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BD7199E6-8E96-4534-B303-E3B20CA2DA63} = {F8AEA6E4-BD8E-4A2C-809F-A95A8C11F332}
-		{41892045-1C87-4E44-B384-79CA8557DEAD} = {F8AEA6E4-BD8E-4A2C-809F-A95A8C11F332}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A18CAC3E-6394-42CC-9206-CA0B79813112}
